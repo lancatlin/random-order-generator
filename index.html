@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>隨機順序產生器</title>
+        <script src="generate.js"></script>
+        <script src="qrcode.js"></script>
+    </head>
+
+    <body>
+        <h1>隨機順序產生器</h1>
+        <div>
+            <label for="begin">從</label><input type="number" name="begin" id="begin" value="1">
+            <label for="end">到</label><input type="number" name="end" id="end" value="10">
+            <button onclick="generate()">產生</button>
+        </div>
+        <textarea id="output" cols="20" rows="10">
+        </textarea>
+        <p id="error"></p>
+        <div id="qrcode"></div>
+        <script>
+            console.log()
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: 'a'.repeat(30),
+                correctLevel: 3,
+            })
+            qrcode.clear()
+        </script>
+    </body>
+</html>
